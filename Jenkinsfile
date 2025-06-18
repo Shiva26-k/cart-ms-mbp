@@ -1,20 +1,26 @@
 pipeline{
     agent any
-    environment {
+    environment{
         name = "Shiva"
         courses = "devops and gcp"
     }
     stages{
-        stage("Build"){
-            environment {
-                cloud = "gcp"
-            }
+        environment{
+            cloud ="gcp"
+        }
+        stage('Build'){
             steps{
-                echo "Welcome ${name}"
-                echo "You registered for ${courses}"
-                echo "You certified in ${cloud}"
+                echo "Welconme ${name}"
+                echo "you registered for ${courses}"
+                echo "You certificated in ${cloud}"
             }
         }
-
+        stage('sonar'){
+            steps{
+                echo "Welconme ${name}"
+                echo "you registered for ${courses}"
+                echo "You certificated in ${cloud}"
+            }
+        }
     }
 }
