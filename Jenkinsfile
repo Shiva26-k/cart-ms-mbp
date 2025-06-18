@@ -8,7 +8,7 @@ pipeline{
         stage('Build'){
              environment{
             cloud ="gcp"
-        }
+        } 
             steps{
                 echo "Welconme ${name}"
                 echo "you registered for ${courses}"
@@ -19,7 +19,7 @@ pipeline{
             steps{
                 echo "Welconme ${name}"
                 echo "you registered for ${courses}"
-                echo "You certificated in ${cloud}"
+                echo "Your Branch name ${env.BRANCH_NAME}"
             }
         }
     }
