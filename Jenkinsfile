@@ -5,10 +5,10 @@ pipeline{
         courses = "devops and gcp"
     }
     stages{
-        environment{
+        stage('Build'){
+             environment{
             cloud ="gcp"
         }
-        stage('Build'){
             steps{
                 echo "Welconme ${name}"
                 echo "you registered for ${courses}"
