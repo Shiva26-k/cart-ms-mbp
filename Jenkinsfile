@@ -1,19 +1,15 @@
 pipeline{
-    agent any 
+    agent any
+    environment{
+        DEPLOY_TO = 'production'
+    }
     stages{
-        stage('Build'){
-            steps{
-                echo "This is Build stage"
+        stage('DeployProduction'){
+            when{
+                environment name :'DEPLOY_TO' , value:'production'
             }
-        }
-        stage('Docker'){
             steps{
-                echo "This is docker stage"
-            }
-        }
-        stage('k8sdeploy'){
-            steps{
-                echo "This is k8s file"
+                echo " deploying the production env"
             }
         }
     }
